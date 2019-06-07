@@ -1,0 +1,7 @@
+.blogTitles {
+  color: #cd2838;
+}
+
+hr{
+  border: 3px solid black;
+}

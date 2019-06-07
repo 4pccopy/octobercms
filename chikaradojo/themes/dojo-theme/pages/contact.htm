@@ -1,0 +1,44 @@
+title = "Contact"
+url = "/contact"
+layout = "default"
+description = "Contact page"
+is_hidden = 0
+
+[contactform]
+==
+<div class="container mt-5">
+<h2>Contact</h2>
+<p>For all enquires about class times and prices, as well as upcoming competitions and events, please feel free to contact us on the form below or reach out to us on our Facebook Page.</p>
+
+<p>You can also call us on 07713 411198.</p>
+</div>
+
+<form class="container mt-5">
+  <div class="row">
+  <div class="col">
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" placeholder="First name">
+  </div>
+  <div class="col">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" placeholder="Last name">
+  </div>
+</div>
+  <div class="form-group mt-2">
+    <label for="formEmailInput">Email address</label>
+    <input type="email" class="form-control" id="formEmailInput" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="formTextInput">Your comment here!</label>
+    <textarea class="form-control" id="formTextInput" rows="3"></textarea>
+  </div>
+  <button class="btn btn-danger" type="submit">Submit details</button>
+
+  <ul>
+
+    {% for error in errors.all() %}
+      <li>{{ error }}</li>
+
+    {% endfor %}
+  </ul>
+</form>

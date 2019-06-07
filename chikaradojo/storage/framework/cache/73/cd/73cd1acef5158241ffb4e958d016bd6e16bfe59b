@@ -1,0 +1,170 @@
+1559902459a:1:{s:14:"blogsingle.htm";a:12:{s:8:"fileName";s:14:"blogsingle.htm";s:7:"content";s:3022:"title = "blog single"
+url = "/blog/:slug"
+layout = "default"
+description = "Single blog page"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "about"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+==
+{% set post = blogPost.post %}
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-9">
+      <div class="content">{{ post.content_html|raw }}</div>
+
+      {% if post.featured_images.count %}
+          <div class="featured-images text-center">
+              {% for image in post.featured_images %}
+                  <p>
+                      <img class="img-fluid"
+                          data-src="{{ image.filename }}"
+                          src="{{ image.path }}"
+                          alt="{{ image.description }}"
+                          style="max-width: 100%" />
+                  </p>
+              {% endfor %}
+          </div>
+      {% endif %}
+
+      <p class="info">
+          Posted
+          {% if post.categories.count %} in
+              {% for category in post.categories %}
+                  <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+          {% endif %}
+          on {{ post.published_at|date('M d, Y') }}
+      </p>
+    </div>
+
+    <div class="col-3">
+      <h4>Check out our other posts</h4>
+    {% set posts = blogPosts.posts %}
+
+<ul class="post-list list-unstyled">
+    {% for post in posts %}
+        <li>
+            <h3><a class="blogTitles" href="{{ post.url }}">{{ post.title }}</a></h3>
+
+            <p class="info">
+                Posted
+                {% if post.categories.count %} in {% endif %}
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                on {{ post.published_at|date('M d, Y') }}
+            </p>
+
+        </li>
+    {% else %}
+        <li class="no-data">{{ blogPosts.noPostsMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+    </div>
+  </div>
+</div>
+";s:5:"mtime";i:1559900174;s:6:"markup";s:2657:"{% set post = blogPost.post %}
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-9">
+      <div class="content">{{ post.content_html|raw }}</div>
+
+      {% if post.featured_images.count %}
+          <div class="featured-images text-center">
+              {% for image in post.featured_images %}
+                  <p>
+                      <img class="img-fluid"
+                          data-src="{{ image.filename }}"
+                          src="{{ image.path }}"
+                          alt="{{ image.description }}"
+                          style="max-width: 100%" />
+                  </p>
+              {% endfor %}
+          </div>
+      {% endif %}
+
+      <p class="info">
+          Posted
+          {% if post.categories.count %} in
+              {% for category in post.categories %}
+                  <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+          {% endif %}
+          on {{ post.published_at|date('M d, Y') }}
+      </p>
+    </div>
+
+    <div class="col-3">
+      <h4>Check out our other posts</h4>
+    {% set posts = blogPosts.posts %}
+
+<ul class="post-list list-unstyled">
+    {% for post in posts %}
+        <li>
+            <h3><a class="blogTitles" href="{{ post.url }}">{{ post.title }}</a></h3>
+
+            <p class="info">
+                Posted
+                {% if post.categories.count %} in {% endif %}
+                {% for category in post.categories %}
+                    <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+                on {{ post.published_at|date('M d, Y') }}
+            </p>
+
+        </li>
+    {% else %}
+        <li class="no-data">{{ blogPosts.noPostsMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if posts.lastPage > 1 %}
+    <ul class="pagination">
+        {% if posts.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..posts.lastPage %}
+            <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if posts.lastPage > posts.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+    </div>
+  </div>
+</div>";s:4:"code";N;s:5:"title";s:11:"blog single";s:3:"url";s:11:"/blog/:slug";s:6:"layout";s:7:"default";s:11:"description";s:16:"Single blog page";s:9:"is_hidden";s:1:"0";s:8:"blogPost";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:12:"categoryPage";s:5:"about";}s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:2:"10";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:13:"blog/category";s:8:"postPage";s:9:"blog/post";}}}

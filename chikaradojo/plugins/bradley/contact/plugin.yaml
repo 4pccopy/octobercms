@@ -1,0 +1,6 @@
+plugin:
+    name: 'bradley.contact::lang.plugin.name'
+    description: 'bradley.contact::lang.plugin.description'
+    author: bradley
+    icon: oc-icon-adjust
+    homepage: ''

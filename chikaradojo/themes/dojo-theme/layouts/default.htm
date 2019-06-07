@@ -1,0 +1,45 @@
+==
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link href="{{ [
+      'assets/css/style.css',
+      'assets/css/bootstrap-grid.min.css',
+      'assets/css/bootstrap.min.css',
+      'assets/css/bootstrap-reboot.min.css'
+    ]|theme }}" rel="stylesheet">
+    {% styles %}
+
+  </head>
+  <body>
+
+<header>
+
+{% partial 'navbar' %}
+
+</header>
+
+  <section id="page" class="container.fluid">
+    {% page %}
+  </section>
+
+
+  <footer>
+
+{% partial 'footer' %}
+
+  </footer>
+
+    <script src="{{ [
+      'assets/js/bootstrap.min.js',
+      'assets/js/bootstrap.bundle.min.js',
+      'assets/js/jquery.min.js'
+    ]|theme }}"></script>
+    {% framework extras %}
+    {% scripts %}
+  </body>
+</html>

@@ -1,0 +1,12 @@
+1559902459a:1:{s:10:"footer.htm";a:5:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:157:"<div id="footer">
+    <div class="container">
+        <hr />
+        <p class="muted credit">&copy; {{ "now"|date("Y") }} Chikara Dojo</p>
+    </div>
+</div>
+";s:5:"mtime";i:1559679960;s:6:"markup";s:156:"<div id="footer">
+    <div class="container">
+        <hr />
+        <p class="muted credit">&copy; {{ "now"|date("Y") }} Chikara Dojo</p>
+    </div>
+</div>";s:4:"code";N;}}
