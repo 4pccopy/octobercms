@@ -1,4 +1,0 @@
-title: Calendar
-modelClass: Bradley\Calendar\Models\Calendar
-toolbar:
-    buttons: reorder_toolbar
