@@ -1,0 +1,8 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table bradley_calendar_'
+    - builder_table_create_bradley_calendar_.php
+1.0.3:
+    - 'Updated table bradley_calendar_'
+    - builder_table_update_bradley_calendar_.php

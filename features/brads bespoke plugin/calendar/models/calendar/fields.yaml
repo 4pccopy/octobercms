@@ -1,0 +1,20 @@
+fields:
+    name:
+        label: 'Event name'
+        span: full
+        type: text
+    date:
+        label: 'Date picker'
+        mode: date
+        span: auto
+        type: datepicker
+    time:
+        label: 'Time picker'
+        mode: time
+        span: auto
+        type: datepicker
+    description:
+        label: Description
+        size: ''
+        span: full
+        type: textarea
