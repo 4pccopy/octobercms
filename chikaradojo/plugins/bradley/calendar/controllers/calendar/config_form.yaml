@@ -1,0 +1,10 @@
+name: Calendar
+form: $/bradley/calendar/models/calendar/fields.yaml
+modelClass: Bradley\Calendar\Models\Calendar
+defaultRedirect: bradley/calendar/calendar
+create:
+    redirect: 'bradley/calendar/calendar/update/:id'
+    redirectClose: bradley/calendar/calendar
+update:
+    redirect: bradley/calendar/calendar
+    redirectClose: bradley/calendar/calendar
